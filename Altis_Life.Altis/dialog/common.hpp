@@ -293,14 +293,14 @@ class Life_RscButton
     sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
     colorText[] = {1,1,1,1.0};
     colorDisabled[] = {0.4,0.4,0.4,1};
-    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",0.7};
-    colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+    colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.69])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.75])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.5])",0.7};
+    colorBackgroundActive[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.69])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.75])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.5])",1};
     colorBackgroundDisabled[] = {0.95,0.95,0.95,1};
     offsetX = 0.003;
     offsetY = 0.003;
     offsetPressedX = 0.002;
     offsetPressedY = 0.002;
-    colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+    colorFocused[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.69])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.75])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.5])",1};
     colorShadow[] = {0,0,0,1};
     colorBorder[] = {0,0,0,1};
     borderSize = 0.0;
@@ -331,8 +331,8 @@ class Life_RscShortcutButton {
     colorFocused[] = {1,1,1,1.0};
     color2[] = {0.95,0.95,0.95,1};
     colorDisabled[] = {1,1,1,0.25};
-    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
-    colorBackgroundFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+    colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.69])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.75])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.5])",1};
+    colorBackgroundFocused[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.69])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.75])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.5])",1};
     colorBackground2[] = {1,1,1,1};
     animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
     animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
@@ -520,7 +520,7 @@ class Life_RscCheckbox {
     color[] = {0, 0, 0, 0};
     colorBackground[] = {0, 0, 1, 1};
     colorTextSelect[] = {0, 0.8, 0, 1};
-    colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+    colorSelectedBg[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.3843])", "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.7019])", "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.8862])", 1};
     colorSelect[] = {0, 0, 0, 1};
     colorTextDisable[] = {0.4, 0.4, 0.4, 1};
     colorDisable[] = {0.4, 0.4, 0.4, 1};
@@ -544,7 +544,7 @@ class Life_RscProgress
     shadow = 2;
     colorFrame[] = {0, 0, 0, 1};
     colorBackground[] = {0,0,0,0.7};
-    colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+    colorBar[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.3843])", "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.7019])", "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.8862])", "(profileNamespace getVariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
 class Life_RscListBox
@@ -602,7 +602,7 @@ class Life_RscEdit {
     colorText[] = {0.95, 0.95, 0.95, 1};
     colorDisabled[] = {1, 1, 1, 0.25};
     autocomplete = false;
-    colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+    colorSelection[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.3843])", "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.7019])", "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.8862])", 1};
     canModify = 1;
 };
 
@@ -801,7 +801,7 @@ class Life_RscMapControl
         colorCanceled[] = {0.7,0.7,0.7,1};
         colorDone[] = {0.7,1,0.3,1};
         colorFailed[] = {1,0.3,0.2,1};
-        color[] = {"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])","(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"};
+        color[] = {"(profileNamespace getVariable ['IGUI_TEXT_RGB_R',0])","(profileNamespace getVariable ['IGUI_TEXT_RGB_G',1])","(profileNamespace getVariable ['IGUI_TEXT_RGB_B',1])","(profileNamespace getVariable ['IGUI_TEXT_RGB_A',0.8])"};
         icon = "\A3\ui_f\data\map\mapcontrol\taskIcon_CA.paa";
         iconCreated = "\A3\ui_f\data\map\mapcontrol\taskIconCreated_CA.paa";
         iconCanceled = "\A3\ui_f\data\map\mapcontrol\taskIconCanceled_CA.paa";
@@ -1157,7 +1157,7 @@ class Life_RscToolbox {
     colorSelect[] = {0.95, 0.95, 0.95, 1};
     colorTextDisable[] = {0.4, 0.4, 0.4, 1};
     colorDisable[] = {0.4, 0.4, 0.4, 1};
-    colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+    colorSelectedBg[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.3843])", "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.7019])", "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
     font = "PuristaMedium";
     sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 };
