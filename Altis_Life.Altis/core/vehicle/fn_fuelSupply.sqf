@@ -18,7 +18,7 @@ if (isNil {_vehicle getVariable "fuelTank"}) then{
     _fuelSpace = getNumber(missionConfigFile >> "LifeCfgVehicles" >> (typeOf _vehicle) >> "vFuelSpace");
     _fuelState = 0;
     _vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];
-}else{
+} else {
     _fuelSpace = (_vehicle getVariable "fuelTank") select 0;
     _fuelState = (_vehicle getVariable "fuelTank") select 1;
 };
@@ -43,7 +43,7 @@ _random = floor((random 11000) + 1500);
     if (isNil {_x getVariable "fuelTank"}) then{
         _x setVariable ["fuelTank",[_random,time],true];
         _fuelFeedState = _random;
-    }else{
+    } else {
         _fuelFeedState = (_x getVariable "fuelTank") select 0;
         if (_fuelFeedState <= 0) then {
             if (time >= ((_x getVariable "fuelTank") select 1)) then {
@@ -107,7 +107,7 @@ waitUntil {
 {
     if (_fuelFeedState <= 0) then{
         _x setVariable ["fuelTank",[0,(time + 1800)],true];
-    }else{
+    } else {
         _x setVariable ["fuelTank",[_fuelFeedState,time],true];
     };
 } forEach (nearestObjects [_vehicle, ["Land_FuelStation_Feed_F","Land_fs_feed_F"], 100]);

@@ -124,13 +124,13 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
                 _thread = [_query,1] call HC_fnc_asyncCall;
 
         };
-    }else{
+    } else {
     _vehicle setVariable ["Trunk",[[],0],true];
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
-    }else{
+    } else {
     _vehicle setFuel 1;
 };
 
