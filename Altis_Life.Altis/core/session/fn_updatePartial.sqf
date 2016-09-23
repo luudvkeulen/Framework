@@ -16,11 +16,11 @@ _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case
 
 switch (_mode) do {
     case 0: {
-        _packet set[2,CASH];
+        _packet set [2,CASH];
     };
 
     case 1: {
-        _packet set[2,BANK];
+        _packet set [2,BANK];
     };
 
     case 2: {
@@ -29,26 +29,26 @@ switch (_mode) do {
             _array pushBack [_varName,LICENSE_VALUE(configName _x,_flag)];
         } forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
 
-        _packet set[2,_array];
+        _packet set [2,_array];
     };
 
     case 3: {
         [] call life_fnc_saveGear;
-        _packet set[2,life_gear];
+        _packet set [2,life_gear];
     };
 
     case 4: {
-        _packet set[2,life_is_alive];
-        _packet set[4,getPosATL player];
+        _packet set [2,life_is_alive];
+        _packet set [4,getPosATL player];
     };
 
     case 5: {
-        _packet set[2,life_is_arrested];
+        _packet set [2,life_is_arrested];
     };
 
     case 6: {
-        _packet set[2,CASH];
-        _packet set[4,BANK];
+        _packet set [2,CASH];
+        _packet set [4,BANK];
     };
 
     case 7: {

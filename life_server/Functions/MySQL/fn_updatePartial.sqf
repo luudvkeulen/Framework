@@ -32,7 +32,7 @@ switch (_mode) do {
         //Does something license related but I can't remember I only know it's important?
         for "_i" from 0 to count(_value)-1 do {
             _bool = [(_value select _i) select 1] call DB_fnc_bool;
-            _value set[_i,[(_value select _i) select 0,_bool]];
+            _value set [_i,[(_value select _i) select 0,_bool]];
         };
         _value = [_value] call DB_fnc_mresArray;
         switch (_side) do {

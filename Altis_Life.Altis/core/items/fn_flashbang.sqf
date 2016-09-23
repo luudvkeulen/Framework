@@ -10,7 +10,7 @@ _pos = [_this,0,[],[[]]] call BIS_fnc_param;
 if (_pos isEqualTo []) exitWith {}; //Badddd
 if (player distance _pos > 25) exitWith {}; //Bad again.
 
-_pos set[2,(_pos select 2)+0.2];
+_pos set [2,(_pos select 2)+0.2];
 if (lineIntersects [eyePos player, ATLtoASL _pos,player]) exitWith {};
 
 _eyeDir = eyeDirection player;

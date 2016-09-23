@@ -140,7 +140,7 @@ for "_i" from 0 to 1 step 0 do {
         _inv pushBack [_resource,_sum];
     } else {
         _val = (_inv select _itemIndex) select 1;
-        _inv set[_itemIndex,[_resource,_val + _sum]];
+        _inv set [_itemIndex,[_resource,_val + _sum]];
     };
 
     if (fuel _vehicle < 0.1) exitWith {

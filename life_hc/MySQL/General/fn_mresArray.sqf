@@ -19,7 +19,7 @@ for "_i" from 0 to (count _array)-1 do
     {
         if (_sel isEqualTo 34) then
         {
-            _array set[_i,96];
+            _array set [_i,96];
         };
     };
 };

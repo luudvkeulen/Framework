@@ -38,7 +38,7 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
         //Check Legacy Items first
         if (count _legacyItems > 0) then {
             for "_i" from 0 to (count _legacyItems)-1 do {
-                _legacyItems set[_i,toLower(_legacyItems select _i)];
+                _legacyItems set [_i,toLower(_legacyItems select _i)];
             };
 
             if ((toLower _item) in _legacyItems) exitWith {_ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};};

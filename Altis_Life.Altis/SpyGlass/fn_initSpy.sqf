@@ -40,7 +40,7 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
         _patchEntry = _binConfigPatches select _i;
         if (isClass _patchEntry) then {
             if (!((configName _patchEntry) in SPY_cfg_patchList)) then {
-                _cfgPatches set[count _cfgPatches,(configName _patchEntry)];
+                _cfgPatches set [count _cfgPatches,(configName _patchEntry)];
             };
         };
     };

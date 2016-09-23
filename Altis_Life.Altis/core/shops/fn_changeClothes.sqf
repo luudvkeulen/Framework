@@ -17,7 +17,7 @@ if (isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
 if (life_cMenu_lock) exitWith {};
 life_cMenu_lock = true;
 
-life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
+life_clothing_purchase set [life_clothing_filter,(_control lbValue _selection)];
 _data = _control lbData _selection;
 
 if (_data isEqualTo "NONE") then {

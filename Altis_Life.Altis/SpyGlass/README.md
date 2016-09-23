@@ -21,7 +21,7 @@ If Arma 3 has updated, it may be possible Bohemia Interactive have included new 
 If this is the case then launch Arma 3 and go to the editor (you do not need to load a mission.)
 Press escape and put into init: 
 
-_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if(isClass _patchEntry) then {			_cfgPatches set[count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
+_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if(isClass _patchEntry) then {			_cfgPatches set [count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
 
 Paste the results into a notepad. 
 Open Mission fn_initSpy.sqf and find 

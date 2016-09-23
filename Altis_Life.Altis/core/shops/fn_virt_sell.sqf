@@ -35,7 +35,7 @@ if (life_shop_type isEqualTo "drugdealer") then {
     if (!(_ind isEqualTo -1)) then {
         _val = ((_array select _ind) select 2);
         _val = _val + _price;
-        _array set[_ind,[getPlayerUID player,profileName,_val]];
+        _array set [_ind,[getPlayerUID player,profileName,_val]];
         life_shop_npc setVariable ["sellers",_array,true];
     } else {
         _array pushBack [getPlayerUID player,profileName,_price];

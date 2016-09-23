@@ -33,7 +33,7 @@ if (_ctrl == "money") then {
         _inv pushBack [_ctrl,_num];
     } else {
         _val = _inv select _index select 1;
-        _inv set[_index,[_ctrl,_val + _num]];
+        _inv set [_index,[_ctrl,_val + _num]];
     };
 
     CASH = CASH - _num;
@@ -49,7 +49,7 @@ if (_ctrl == "money") then {
         _inv pushBack [_ctrl,_num];
     } else {
         _val = _inv select _index select 1;
-        _inv set[_index,[_ctrl,_val + _num]];
+        _inv set [_index,[_ctrl,_val + _num]];
     };
 
     life_trunk_vehicle setVariable ["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];

@@ -29,6 +29,6 @@ private _crimesArr = [];
     nil = _crimesArr pushBack _str;
 } count _type;
 
-_queryResult set[0,_crimesArr];
+_queryResult set [0,_crimesArr];
 
 [_queryResult] remoteExec ["life_fnc_wantedInfo",_ret];

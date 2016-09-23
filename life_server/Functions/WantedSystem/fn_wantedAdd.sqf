@@ -27,7 +27,7 @@ _type = [_type, parseNumber ((_crimesConfig select _index) select 1)];
 
 if (count _type isEqualTo 0) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
-if !(_customBounty isEqualTo -1) then {_type set[1,_customBounty];};
+if !(_customBounty isEqualTo -1) then {_type set [1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 private _query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];

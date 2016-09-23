@@ -34,7 +34,7 @@ if (_ctrl == "money") then {
     if (_num == _value) then {
         _data deleteAt _index;
     } else {
-        _data set[_index,[_ctrl,(_value - _num)]];
+        _data set [_index,[_ctrl,(_value - _num)]];
     };
 
     CASH = CASH + _num;
@@ -46,7 +46,7 @@ if (_ctrl == "money") then {
         if (_num == _value) then {
             _data deleteAt _index;
         } else {
-            _data set[_index,[_ctrl,(_value - _num)]];
+            _data set [_index,[_ctrl,(_value - _num)]];
         };
         life_trunk_vehicle setVariable ["Trunk",[_data,(_old select 1) - _weight],true];
         [life_trunk_vehicle] call life_fnc_vehInventory;

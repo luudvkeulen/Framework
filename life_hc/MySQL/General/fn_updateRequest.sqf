@@ -34,7 +34,7 @@ _position = if (_side isEqualTo civilian) then {[_position] call HC_fnc_mresArra
 //Does something license related but I can't remember I only know it's important?
 for "_i" from 0 to count(_licenses)-1 do {
     _bool = [(_licenses select _i) select 1] call HC_fnc_bool;
-    _licenses set[_i,[(_licenses select _i) select 0,_bool]];
+    _licenses set [_i,[(_licenses select _i) select 0,_bool]];
 };
 
 _licenses = [_licenses] call HC_fnc_mresArray;
@@ -50,9 +50,9 @@ _playtime_update = [];
 } forEach TON_fnc_playtime_values_request;
 _playtime_update = (_playtime_update select 0) select 0;
 switch (_side) do {
-    case west: {_playtime_update set[0,_playtime];};
-    case civilian: {_playtime_update set[2,_playtime];};
-    case independent: {_playtime_update set[1,_playtime];};
+    case west: {_playtime_update set [0,_playtime];};
+    case civilian: {_playtime_update set [2,_playtime];};
+    case independent: {_playtime_update set [1,_playtime];};
 };
 _playtime_update = [_playtime_update] call HC_fnc_mresArray;
 

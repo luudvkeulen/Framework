@@ -70,7 +70,7 @@ switch (_type) do
 
 if (_type isEqualTo []) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
-if (_customBounty != -1) then {_type set[1,_customBounty];};
+if (_customBounty != -1) then {_type set [1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 _query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
