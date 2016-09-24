@@ -5,7 +5,7 @@
 
     Description:
     Adds a player to the database upon first joining of the server.
-    Recieves information from core\sesison\fn_insertPlayerInfo.sqf
+    Receives information from core\session\fn_insertPlayerInfo.sqf
 */
 private ["_queryResult","_query","_alias"];
 params [
@@ -38,8 +38,8 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];}; //There was an entry!
 if (count _queryResult != 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
 
-//Clense and prepare some information.
-_name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
+//Cleanse and prepare some information.
+_name = [_name] call DB_fnc_mresString; //Cleanse the name of bad chars.
 _alias = [[_name]] call DB_fnc_mresArray;
 _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
