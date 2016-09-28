@@ -27,7 +27,7 @@ _headgear = _loadout select 14;
 _goggles = _loadout select 15;
 
 //Strip the unit down
-RemoveAllWeapons player;
+removeAllWeapons player;
 {player removeMagazine _x;} forEach (magazines player);
 removeUniform player;
 removeVest player;
