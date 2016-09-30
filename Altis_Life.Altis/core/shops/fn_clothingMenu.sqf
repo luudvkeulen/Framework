@@ -12,7 +12,7 @@ if (player != vehicle player) exitWith {titleText [localize "STR_NOTF_ActionInVe
 _exit = false;
 
 /* License check & config validation */
-if (!isClass(missionConfigFile >> "Clothing" >> (_this select 3))) exitWith {}; //Bad config entry.
+if (!isClass (missionConfigFile >> "Clothing" >> (_this select 3))) exitWith {}; //Bad config entry.
 _shopTitle = M_CONFIG(getText,"Clothing", (_this select 3), "title");
 _shopSide = M_CONFIG(getText,"Clothing", (_this select 3), "side");
 _license = M_CONFIG(getText,"Clothing", (_this select 3), "license");
@@ -111,7 +111,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
 life_clothing_store = (_this select 3);
 
 /* Store license check */
-if (isClass(missionConfigFile >> "Licenses" >> life_clothing_store)) then {
+if (isClass (missionConfigFile >> "Licenses" >> life_clothing_store)) then {
     _flag = M_CONFIG(getText, "Licenses",life_clothing_store, "side");
     _displayName = M_CONFIG(getText, "Licenses",life_clothing_store, "displayName");
     if (!(LICENSE_VALUE(life_clothing_store, _flag))) exitWith {

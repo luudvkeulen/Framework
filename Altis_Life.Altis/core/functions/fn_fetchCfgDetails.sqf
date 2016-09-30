@@ -44,14 +44,14 @@ _return = [];
 
 if (_section isEqualTo "") then {
     _section = switch (true) do {
-        case (isClass(configFile >> "CfgMagazines" >> _className)): {"CfgMagazines"};
-        case (isClass(configFile >> "CfgWeapons" >> _className)): {"CfgWeapons"};
-        case (isClass(configFile >> "CfgVehicles" >> _className)): {"CfgVehicles"};
-        case (isClass(configFile >> "CfgGlasses" >> _className)): {"CfgGlasses"};
+        case (isClass (configFile >> "CfgMagazines" >> _className)): {"CfgMagazines"};
+        case (isClass (configFile >> "CfgWeapons" >> _className)): {"CfgWeapons"};
+        case (isClass (configFile >> "CfgVehicles" >> _className)): {"CfgVehicles"};
+        case (isClass (configFile >> "CfgGlasses" >> _className)): {"CfgGlasses"};
     };
 };
 
-if (!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
+if (!(_section isEqualType "") || {!isClass (configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
 _config = configFile >> _section >> _className;
 _displayName = getText (_config >> "displayName");
 _picture = getText (_config >> "picture");
