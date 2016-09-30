@@ -7,7 +7,7 @@
     Deposits money into the players gang bank.
 */
 private ["_value"];
-_value = parseNumber(ctrlText 2702);
+_value = parseNumber (ctrlText 2702);
 group player setVariable ["gbank_in_use_by",player,true];
 
 //Series of stupid checks

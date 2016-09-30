@@ -6,7 +6,7 @@
 */
 private ["_bomb","_time"];
 _time = time + (5 * 60);
-waitUntil {(round(_time - time) < 1)};
+waitUntil {(round (_time - time) < 1)};
 sleep 0.9;
 if (!(fed_bank getVariable["chargeplaced",false])) exitWith {};
 

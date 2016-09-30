@@ -40,7 +40,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
     if (player distance _house > 13) exitWith {};
 };
@@ -69,7 +69,7 @@ _value = 0;
 
 if (_value > 0) then {
     [0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast", RCLIENT];
-    BANK = BANK + round(_value / 2);
+    BANK = BANK + round (_value / 2);
     [1] call SOCK_fnc_updatePartial;
 
     _house setVariable ["Trunk",[_houseInvData,_houseInvVal],true];

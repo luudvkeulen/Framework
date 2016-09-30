@@ -28,7 +28,7 @@ ctrlShow [20330, true];
     (localize "STR_Shop_Veh_UI_Fuel")+ " %1l<br/>" +
     (localize "STR_Fuel_Tank_Vehicle")+ " %2l",
     _fueltank,
-    round(_fueltank * _fuel)
+    round (_fueltank * _fuel)
 ];
 
 {

@@ -42,7 +42,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep .15;
     _cP = _cP + .01;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
     if (life_istazed) exitWith {}; //Tazed
     if (life_isknocked) exitWith {}; //Knocked

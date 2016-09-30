@@ -27,7 +27,7 @@ _illegalValue = 0;
             _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_illegalItemProcessed,"sellPrice");
         };
 
-        _illegalValue = _illegalValue + (round(_val * _illegalPrice / 2));
+        _illegalValue = _illegalValue + (round (_val * _illegalPrice / 2));
     };
 } forEach (_vehicleInfo select 0);
 _value = _illegalValue;

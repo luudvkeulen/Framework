@@ -44,9 +44,9 @@ switch (playerSide) do {
 };
 
  if (_mode) then {
-     _purchasePrice = round(_initalPrice * _buyMultiplier);
+     _purchasePrice = round (_initalPrice * _buyMultiplier);
  } else {
-     _purchasePrice = round(_initalPrice * _rentMultiplier);
+     _purchasePrice = round (_initalPrice * _rentMultiplier);
  };
 _colorIndex = lbValue [2304, (lbCurSel 2304)];
 

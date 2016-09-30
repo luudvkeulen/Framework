@@ -11,7 +11,7 @@ if (playerSide != civilian) exitWith {}; //What in the hell?
 [player] join (createGroup civilian);
 if (count life_gangData isEqualTo 0) exitWith {}; //Dafuq?
 
-_wait = round(random(8));
+_wait = round (random (8));
 sleep _wait;
 
 //Loop through to make sure there is not a group already created with the gang.

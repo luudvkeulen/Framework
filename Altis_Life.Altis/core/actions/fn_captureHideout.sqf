@@ -59,7 +59,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_title];
     _hideout setVariable ["inCapture",true,true];
     if (_cP >= 1 || !alive player) exitWith {_hideout setVariable ["inCapture",false,true];};
     if (life_istazed) exitWith {_hideout setVariable ["inCapture",false,true];}; //Tazed

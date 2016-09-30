@@ -330,7 +330,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
               _pos = visiblePosition _x;
               _Markers = createMarkerLocal[format [""CRW%1%2"", _pos select 0, _pos select 1], [(_pos select 0) + 20, _pos select 1, 0]];
               _TypeVehicle = (getText (configFile >> 'CfgVehicles' >> (typeOf vehicle _x) >> 'displayName'));
-              _Markers setMarkerTextLocal format ['%1---%2---%3m', name _x, _TypeVehicle, round(_x distance player)];
+              _Markers setMarkerTextLocal format ['%1---%2---%3m', name _x, _TypeVehicle, round (_x distance player)];
               _Markers setMarkerTypeLocal ""mil_dot"";
               if (side _x isEqualTo independent) then {
                 _Markers setMarkerColorLocal (""ColorIndependent"");
@@ -352,7 +352,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                                     if (!life_markers && !(alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles == _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")) exitWith {};
                   _CrewVehicle = ((crew vehicle _PlayersOrVehicles) find _PlayersOrVehicles);
                   _Marker setMarkerPosLocal([(visiblePosition _PlayersOrVehicles select 0) + 20, (visiblePosition _PlayersOrVehicles select 1) - (25 + _CrewVehicle * 20), 0]);
-                                    _Marker setMarkerTextLocal format ['%1---%2---%3m', name _PlayersOrVehicles, _TypeVehicle, round(_PlayersOrVehicles distance player)];
+                                    _Marker setMarkerTextLocal format ['%1---%2---%3m', name _PlayersOrVehicles, _TypeVehicle, round (_PlayersOrVehicles distance player)];
                   sleep 0.01;
                 };
                 deleteMarkerLocal _Marker;
@@ -380,7 +380,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
           if (side _x isEqualTo west) then {
             _Markers setMarkerColorLocal (""ColorBLUFOR"");
           };
-          _Markers setMarkerTextLocal format [""%1---%2"", name _x, round(_x distance player)];
+          _Markers setMarkerTextLocal format [""%1---%2"", name _x, round (_x distance player)];
           if (_x == player) then {
             _Markers setMarkerColorLocal ""ColorGreen"";
           };
@@ -392,7 +392,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                         for ""_i"" from 0 to 1 step 0 do {
                             if (!life_markers && !(alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles != _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")) exitWith {};
               _Marker setMarkerPosLocal([visiblePosition _PlayersOrVehicles select 0, visiblePosition _PlayersOrVehicles select 1, 0]);
-              _Marker setMarkerTextLocal format [""%1---%2"", name _PlayersOrVehicles, round(_PlayersOrVehicles distance player)];
+              _Marker setMarkerTextLocal format [""%1---%2"", name _PlayersOrVehicles, round (_PlayersOrVehicles distance player)];
               sleep 0.01;
             };
             deleteMarkerLocal _Marker;

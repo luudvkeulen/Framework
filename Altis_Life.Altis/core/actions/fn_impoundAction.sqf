@@ -35,7 +35,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep 0.09;
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
-    _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+    _pgText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_upp];
     if (_cP >= 1) exitWith {};
     if (player distance _vehicle > 10) exitWith {};
     if (!alive player) exitWith {};

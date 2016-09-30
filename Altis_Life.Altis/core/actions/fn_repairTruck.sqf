@@ -36,7 +36,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
             sleep 0.27;
             _cP = _cP + 0.01;
             _progress progressSetPosition _cP;
-            _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+            _pgText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_upp];
             if (_cP >= 1) exitWith {};
             if (!alive player) exitWith {};
             if (player != vehicle player) exitWith {};

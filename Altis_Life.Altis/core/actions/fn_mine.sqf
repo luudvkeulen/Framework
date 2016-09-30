@@ -81,7 +81,7 @@ if (_exit) exitWith {
     life_action_inUse = false;
 };
 
-_amount = round(random(_maxGather)) + 1;
+_amount = round (random (_maxGather)) + 1;
 _diff = [_mined, _amount, life_carryWeight, life_maxWeight] call life_fnc_calWeightDiff;
 if (_diff isEqualTo 0) exitWith {
     hint localize "STR_NOTF_InvFull";

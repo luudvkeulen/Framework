@@ -37,7 +37,7 @@ if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
 */
 
 if (isNil {uiNamespace getVariable "life_sql_id"}) then {
-    life_sql_id = round(random(9999));
+    life_sql_id = round (random (9999));
     CONSTVAR(life_sql_id);
     uiNamespace setVariable ["life_sql_id",life_sql_id];
         try {

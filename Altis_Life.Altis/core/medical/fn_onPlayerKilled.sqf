@@ -55,7 +55,7 @@ _unit spawn {
         };
     _RespawnBtn ctrlEnable false;
     waitUntil {_Timer ctrlSetText format [localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
-    round(_maxTime - time) <= 0 || isNull _this};
+    round (_maxTime - time) <= 0 || isNull _this};
     _RespawnBtn ctrlEnable true;
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
 };
@@ -66,7 +66,7 @@ _unit spawn {
     _requestBtn = ((findDisplay 7300) displayCtrl 7303);
     _requestBtn ctrlEnable false;
     _requestTime = time + 5;
-    waitUntil {round(_requestTime - time) <= 0 || isNull _this};
+    waitUntil {round (_requestTime - time) <= 0 || isNull _this};
     _requestBtn ctrlEnable true;
 };
 

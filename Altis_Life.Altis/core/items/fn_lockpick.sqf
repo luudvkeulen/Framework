@@ -53,7 +53,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + 0.01;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round (_cP * 100),"%",_title];
 
     if (_cP >= 1 || !alive player) exitWith {};
     if (life_istazed) exitWith {}; //Tazed
@@ -80,7 +80,7 @@ if (!_isVehicle) then {
     _curTarget setVariable ["Escorting",false,true];
     _curTarget setVariable ["transporting",false,true];
 } else {
-    _dice = random(100);
+    _dice = random (100);
     if (_dice < 30) then {
         titleText [localize "STR_ISTR_Lock_Success","PLAIN"];
         life_vehicles pushBack _curTarget;

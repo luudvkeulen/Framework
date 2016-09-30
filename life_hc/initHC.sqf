@@ -16,7 +16,7 @@ life_HC_server_extDB_notLoaded = "";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 
 if (isNil {uiNamespace getVariable "life_sql_id"}) then {
-    life_sql_id = round(random(9999));
+    life_sql_id = round (random (9999));
     CONSTVAR(life_sql_id);
     uiNamespace setVariable ["life_sql_id",life_sql_id];
 

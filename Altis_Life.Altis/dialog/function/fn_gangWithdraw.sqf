@@ -7,7 +7,7 @@
     Withdraws money from the gang bank.
 */
 private ["_value"];
-_value = parseNumber(ctrlText 2702);
+_value = parseNumber (ctrlText 2702);
 _gFund = GANG_FUNDS;
 group player setVariable ["gbank_in_use_by",player,true];
 
