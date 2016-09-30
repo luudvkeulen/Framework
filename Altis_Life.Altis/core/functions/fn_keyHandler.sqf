@@ -204,9 +204,9 @@ switch (_code) do {
                 titleText [localize "STR_MISC_SirensON","PLAIN"];
                 _veh setVariable ["siren",true,true];
                 if (playerSide isEqualTo west) then {
-                    [_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
+                    [_veh] remoteExec ["life_fnc_copSiren", RCLIENT];
                 } else {
-                    [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+                    [_veh] remoteExec ["life_fnc_medicSiren", RCLIENT];
                 };
             };
         };

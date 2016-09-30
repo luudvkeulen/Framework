@@ -35,7 +35,7 @@ _cP = 0.01;
 //Lets reuse the same thing!
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-        [player,"AinvPknlMstpSnonWnonDnon_medic_1"] remoteExecCall ["life_fnc_animSync",RCLIENT];
+        [player,"AinvPknlMstpSnonWnonDnon_medic_1"] remoteExecCall ["life_fnc_animSync", RCLIENT];
         player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
     };
 

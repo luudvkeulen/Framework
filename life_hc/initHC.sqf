@@ -43,7 +43,7 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
 if (life_HC_server_extDB_notLoaded isEqualType []) then {
     [] spawn {
         for "_i" from 0 to 1 step 0 do {
-            [0,"There is a problem with the Headless Client, please contact an administrator."] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+            [0,"There is a problem with the Headless Client, please contact an administrator."] remoteExecCall ["life_fnc_broadcast", RCLIENT];
             sleep 120;
         };
     };

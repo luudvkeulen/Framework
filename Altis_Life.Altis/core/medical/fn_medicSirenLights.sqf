@@ -18,5 +18,5 @@ if (_trueorfalse) then {
     _vehicle setVariable ["lights",false,true];
 } else {
     _vehicle setVariable ["lights",true,true];
-    [_vehicle,0.22] remoteExec ["life_fnc_medicLights",RCLIENT];
+    [_vehicle,0.22] remoteExec ["life_fnc_medicLights", RCLIENT];
 };
