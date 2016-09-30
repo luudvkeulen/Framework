@@ -69,8 +69,8 @@ player playActionNow "stop";
 
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
 if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false;};
-if (!isNil "_badDistance") exitWith {titleText[localize "STR_ISTR_Lock_TooFar","PLAIN"]; life_action_inUse = false;};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if (!isNil "_badDistance") exitWith {titleText [localize "STR_ISTR_Lock_TooFar","PLAIN"]; life_action_inUse = false;};
+if (life_interrupted) exitWith {life_interrupted = false; titleText [localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 if (!([false,"lockpick",1] call life_fnc_handleInv)) exitWith {life_action_inUse = false;};
 
 life_action_inUse = false;
@@ -82,7 +82,7 @@ if (!_isVehicle) then {
 } else {
     _dice = random(100);
     if (_dice < 30) then {
-        titleText[localize "STR_ISTR_Lock_Success","PLAIN"];
+        titleText [localize "STR_ISTR_Lock_Success","PLAIN"];
         life_vehicles pushBack _curTarget;
 
         if (life_HC_isActive) then {
@@ -100,6 +100,6 @@ if (!_isVehicle) then {
         };
 
         [0,"STR_ISTR_Lock_FailedNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",west];
-        titleText[localize "STR_ISTR_Lock_Failed","PLAIN"];
+        titleText [localize "STR_ISTR_Lock_Failed","PLAIN"];
     };
 };

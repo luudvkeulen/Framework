@@ -9,7 +9,7 @@
 private ["_vehicle", "_fuelSpace", "_fuelState", "_fuelFeedState", "_fuelLevel", "_distance", "_shortest", "_random", "_another", "_ui", "_progress", "_pgText", "_win", "_price", "_pricem"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
-if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse", "PLAIN"];};
+if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText [localize "STR_FuelTank_InUse", "PLAIN"];};
 closeDialog 0;
 
 life_action_inUse = true;
@@ -28,10 +28,10 @@ _another = false;
     if (!isNil {_x getVariable "fuelTankWork"}) exitWith {_another};
 } forEach (nearestObjects [_vehicle, ["C_Van_01_fuel_F", "I_Truck_02_fuel_F", "B_Truck_01_fuel_F"], 100]);
 
-if (_another)exitWith{titleText[localize "STR_FuelTank_AnotherInUse", "PLAIN"];life_action_inUse = false;};
+if (_another)exitWith{titleText [localize "STR_FuelTank_AnotherInUse", "PLAIN"];life_action_inUse = false;};
 
 if (_fuelState <= 0) exitWith {
-    titleText[localize "STR_FuelTank_Empty", "PLAIN"];
+    titleText [localize "STR_FuelTank_Empty", "PLAIN"];
     life_action_inUse = false;
 };
 
@@ -83,9 +83,9 @@ _progress progressSetPosition _fuelLevel;
 
 waitUntil {
     if (!alive _vehicle || isNull _vehicle) exitWith {true};
-    if (isEngineOn _vehicle) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
-    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
-    if (player distance _vehicle > 20) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (isEngineOn _vehicle) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (player distance _vehicle > 20) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
 
     _fuelState = _fuelState - 100;
     _fuelFeedState = _fuelFeedState - 100;

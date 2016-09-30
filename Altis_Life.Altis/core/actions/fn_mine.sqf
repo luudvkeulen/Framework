@@ -69,7 +69,7 @@ if (_requiredItem != "") then {
     if (_valItem < 1) exitWith {
         switch (_requiredItem) do {
             case "pickaxe": {
-                titleText[(localize "STR_NOTF_Pickaxe"), "PLAIN"];
+                titleText [(localize "STR_NOTF_Pickaxe"), "PLAIN"];
             };
         };
         life_action_inUse = false;
@@ -99,7 +99,7 @@ for "_i" from 0 to 4 do {
 
 if (([true, _mined, _diff] call life_fnc_handleInv)) then {
     _itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
-    titleText[format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
+    titleText [format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
 };
 
 sleep 2.5;

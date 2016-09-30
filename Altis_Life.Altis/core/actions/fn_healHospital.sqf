@@ -24,11 +24,11 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
-    titleText[localize "STR_NOTF_HS_Healing","PLAIN"];
+    titleText [localize "STR_NOTF_HS_Healing","PLAIN"];
     closeDialog 0;
     uiSleep 8;
-    if (player distance (_this select 0) > 5) exitWith {life_action_inUse = false; titleText[localize "STR_NOTF_HS_ToFar","PLAIN"]};
-    titleText[localize "STR_NOTF_HS_Healed","PLAIN"];
+    if (player distance (_this select 0) > 5) exitWith {life_action_inUse = false; titleText [localize "STR_NOTF_HS_ToFar","PLAIN"]};
+    titleText [localize "STR_NOTF_HS_Healed","PLAIN"];
     player setDamage 0;
     CASH = CASH - _healCost;
     life_action_inUse = false;

@@ -13,8 +13,8 @@ private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
 _hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
-if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
-if (_group == group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
+if (isNil {group player getVariable "gang_name"}) exitWith {titleText [localize "STR_GNOTF_CreateGang","PLAIN"];};
+if (_group == group player) exitWith {titleText [localize "STR_GNOTF_Controlled","PLAIN"]};
 if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
 if (!isNull _group) then {
     _gangName = _group getVariable ["gang_name",""];
@@ -30,7 +30,7 @@ if (!isNull _group) then {
     _cpRate = 0.0075;
 };
 
-if (!isNil "_action" && {!_action}) exitWith {titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"];};
+if (!isNil "_action" && {!_action}) exitWith {titleText [localize "STR_GNOTF_CaptureCancel","PLAIN"];};
 life_action_inUse = true;
 
 //Setup the progress bar
@@ -72,10 +72,10 @@ for "_i" from 0 to 1 step 0 do {
 player playActionNow "stop";
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
 if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"]; life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
+if (life_interrupted) exitWith {life_interrupted = false; titleText [localize "STR_GNOTF_CaptureCancel","PLAIN"]; life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
 life_action_inUse = false;
 
-titleText[localize "STR_GNOTF_Captured","PLAIN"];
+titleText [localize "STR_GNOTF_Captured","PLAIN"];
 _flagTexture = [
         "\A3\Data_F\Flags\Flag_red_CO.paa",
         "\A3\Data_F\Flags\Flag_green_CO.paa",

@@ -25,12 +25,12 @@ if (isNull _cop) exitWith {};
             player setVariable ["Escorting",false,true];
             player setVariable ["transporting",false,true];
             detach player;
-            titleText[localize "STR_Cop_ExcessiveRestrain","PLAIN"];
+            titleText [localize "STR_Cop_ExcessiveRestrain","PLAIN"];
         };
     };
 };
 
-titleText[format [localize "STR_Cop_Restrained",_cop getVariable ["realname",name _cop]],"PLAIN"];
+titleText [format [localize "STR_Cop_Restrained",_cop getVariable ["realname",name _cop]],"PLAIN"];
 
 life_disable_getIn = true;
 life_disable_getOut = false;

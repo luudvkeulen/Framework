@@ -10,7 +10,7 @@
 private ["_vehicle", "_fuelSpace", "_fuelState", "_fuelLevel", "_ui", "_progress", "_pgText"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
-if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse", "PLAIN"];};
+if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText [localize "STR_FuelTank_InUse", "PLAIN"];};
 closeDialog 0;
 life_action_inUse = true;
 if (isNil {_vehicle getVariable "fuelTank"}) then{
@@ -37,9 +37,9 @@ _progress progressSetPosition _fuelLevel;
 
 waitUntil {
     if (!alive _vehicle || isNull _vehicle) exitWith {true};
-    if (isEngineOn _vehicle) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
-    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
-    if (player distance _vehicle > 20) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (isEngineOn _vehicle) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (player distance _vehicle > 20) exitWith {titleText [localize "STR_FuelTank_Stopped", "PLAIN"]; true};
 
     _fuelState = _fuelState + 100;
     _vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];

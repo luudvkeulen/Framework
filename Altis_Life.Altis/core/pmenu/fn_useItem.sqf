@@ -19,7 +19,7 @@ switch (true) do {
             if (_item isEqualTo "redgull" && {LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1}) then {
                 [] spawn {
                     life_redgull_effect = time;
-                    titleText[localize "STR_ISTR_RedGullEffect","PLAIN"];
+                    titleText [localize "STR_ISTR_RedGullEffect","PLAIN"];
                     player enableFatigue false;
                     waitUntil {!alive player || ((time - life_redgull_effect) > (3 * 60))};
                     player enableFatigue true;

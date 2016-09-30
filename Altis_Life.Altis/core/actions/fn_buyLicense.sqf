@@ -20,7 +20,7 @@ CASH = CASH - _price;
 
 [0] call SOCK_fnc_updatePartial;
 
-titleText[format [localize "STR_NOTF_B_1", localize _displayName,[_price] call life_fnc_numberText],"PLAIN"];
+titleText [format [localize "STR_NOTF_B_1", localize _displayName,[_price] call life_fnc_numberText],"PLAIN"];
 missionNamespace setVariable [_varName,true];
 
 [2] call SOCK_fnc_updatePartial;

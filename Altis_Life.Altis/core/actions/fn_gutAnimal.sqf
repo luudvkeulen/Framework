@@ -57,12 +57,12 @@ life_action_inUse = false;
 "progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (isNull _animalCorpse) exitWith {life_action_inUse = false;};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
-if (player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
+if (life_interrupted) exitWith {life_interrupted = false; titleText [localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if (player != vehicle player) exitWith {titleText [localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 if ([true,_item,1] call life_fnc_handleInv) then {
     deleteVehicle _animalCorpse;
-    titleText[format [(localize "STR_NOTF_Guttingfinish"),_displayName],"PLAIN"];
+    titleText [format [(localize "STR_NOTF_Guttingfinish"),_displayName],"PLAIN"];
 } else {
-    titleText[(localize "STR_NOTF_InvFull"),"PLAIN"];
+    titleText [(localize "STR_NOTF_InvFull"),"PLAIN"];
 };

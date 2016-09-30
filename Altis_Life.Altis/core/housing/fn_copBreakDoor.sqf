@@ -58,7 +58,7 @@ for "_i" from 0 to 1 step 0 do {
 player playActionNow "stop";
 
 if (!alive player) exitWith {life_action_inUse = false;};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if (life_interrupted) exitWith {life_interrupted = false; titleText [localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
 life_action_inUse = false;
 _house animate [format ["door_%1_rot",_door],1];

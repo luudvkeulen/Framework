@@ -23,4 +23,4 @@ for "_i" from 1 to _numberOfDoors do {
 };
 
 _house setVariable ["locked",true,true];
-titleText[localize "STR_House_LockedUp","PLAIN"];
+titleText [localize "STR_House_LockedUp","PLAIN"];

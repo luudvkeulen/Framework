@@ -47,4 +47,4 @@ if (vest player in _vest) then {removeVest player;};
 if (headgear player in _headgear) then {removeHeadgear player;};
 
 [] call SOCK_fnc_updateRequest;
-titleText[localize "STR_NOTF_SeizeIllegals","PLAIN"];
+titleText [localize "STR_NOTF_SeizeIllegals","PLAIN"];

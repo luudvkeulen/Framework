@@ -47,7 +47,7 @@ for "_i" from 0 to 1 step 0 do {
 
 //Kill the UI display and check for various states
 "progressBar" cutText ["","PLAIN"];
-if (player distance _house > 13) exitWith {life_action_inUse = false; titleText[localize "STR_House_Raid_TooFar","PLAIN"]};
+if (player distance _house > 13) exitWith {life_action_inUse = false; titleText [localize "STR_House_Raid_TooFar","PLAIN"]};
 if (!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
