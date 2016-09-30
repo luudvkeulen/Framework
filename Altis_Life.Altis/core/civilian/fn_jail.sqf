@@ -54,7 +54,7 @@ if (LIFE_SETTINGS(getNumber,"jail_seize_inventory") isEqualTo 1) then {
 };
 
 if (life_HC_isActive) then {
-    [player,_bad] remoteExecCall ["HC_fnc_jailSys",HC_Life];
+    [player,_bad] remoteExecCall ["HC_fnc_jailSys", HC_Life];
 } else {
     [player,_bad] remoteExecCall ["life_fnc_jailSys",RSERV];
 };

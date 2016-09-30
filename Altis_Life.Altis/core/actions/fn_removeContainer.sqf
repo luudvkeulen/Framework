@@ -32,7 +32,7 @@ if (_action) then {
     if (_diff isEqualTo 0) exitWith {hint localize "STR_NOTF_InvFull"};
 
     if (life_HC_isActive) then {
-        [_container] remoteExecCall ["HC_fnc_deleteDBContainer",HC_Life];
+        [_container] remoteExecCall ["HC_fnc_deleteDBContainer", HC_Life];
     } else {
         [_container] remoteExecCall ["TON_fnc_deleteDBContainer",RSERV];
     };

@@ -38,7 +38,7 @@ if (!isNull _house) then {
                 if (count _containers < (_houseCfg select 1)) then {
                     _isPlaced = true;
                     if (life_HC_isActive) then {
-                        [_uid,_container] remoteExec ["HC_fnc_addContainer",HC_Life];
+                        [_uid,_container] remoteExec ["HC_fnc_addContainer", HC_Life];
                     } else {
                         [_uid,_container] remoteExec ["TON_fnc_addContainer",RSERV];
                     };

@@ -36,7 +36,7 @@ _vehicle spawn {
     if (_this isKindOf "Box_IND_Grenades_F" || _this isKindOf "B_supplyCrate_F") then {
 
         if (life_HC_isActive) then {
-            [_this] remoteExecCall ["HC_fnc_updateHouseTrunk",HC_Life];
+            [_this] remoteExecCall ["HC_fnc_updateHouseTrunk", HC_Life];
         } else {
             [_this] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
         };
@@ -51,7 +51,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             [] call SOCK_fnc_updateRequest;
 
             if (life_HC_isActive) then {
-                [_this,2] remoteExecCall ["HC_fnc_vehicleUpdate",HC_Life];
+                [_this,2] remoteExecCall ["HC_fnc_vehicleUpdate", HC_Life];
             } else {
                 [_this,2] remoteExecCall ["TON_fnc_vehicleUpdate",2];
             };

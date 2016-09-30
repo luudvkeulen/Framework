@@ -19,7 +19,7 @@ if (_action) then {
     hint localize "STR_GNOTF_DisbandGangPro";
 
     if (life_HC_isActive) then {
-        [group player] remoteExec ["HC_fnc_removeGang",HC_Life];
+        [group player] remoteExec ["HC_fnc_removeGang", HC_Life];
     } else {
         [group player] remoteExec ["TON_fnc_removeGang",RSERV];
     };

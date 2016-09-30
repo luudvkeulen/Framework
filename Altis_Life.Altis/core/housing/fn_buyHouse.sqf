@@ -33,7 +33,7 @@ if (_action) then {
     [1] call SOCK_fnc_updatePartial;
 
     if (life_HC_isActive) then {
-        [_uid,_house] remoteExec ["HC_fnc_addHouse",HC_Life];
+        [_uid,_house] remoteExec ["HC_fnc_addHouse", HC_Life];
     } else {
         [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
     };

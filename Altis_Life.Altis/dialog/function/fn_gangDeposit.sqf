@@ -23,7 +23,7 @@ _gFund = _gFund + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
 if (life_HC_isActive) then {
-    [1,group player] remoteExecCall ["HC_fnc_updateGang",HC_Life];
+    [1,group player] remoteExecCall ["HC_fnc_updateGang", HC_Life];
 } else {
     [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
 };

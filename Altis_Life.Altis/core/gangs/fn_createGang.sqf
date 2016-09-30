@@ -20,7 +20,7 @@ if (_badChar) exitWith {hint localize "STR_GNOTF_IncorrectChar";};
 if (BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {hint format [localize "STR_GNOTF_NotEnoughMoney",[((LIFE_SETTINGS(getNumber,"gang_price")) - BANK)] call life_fnc_numberText];};
 
 if (life_HC_isActive) then {
-    [player,getPlayerUID player,_gangName] remoteExec ["HC_fnc_insertGang",HC_Life];
+    [player,getPlayerUID player,_gangName] remoteExec ["HC_fnc_insertGang", HC_Life];
 } else {
     [player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang",RSERV];
 };

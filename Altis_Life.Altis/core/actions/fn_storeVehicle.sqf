@@ -32,7 +32,7 @@ if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
 _storetext = localize "STR_Garage_Store_Success";
 
 if (life_HC_isActive) then {
-    [_vehicle,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
+    [_vehicle,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore", HC_Life];
 } else {
     [_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",RSERV];
 };

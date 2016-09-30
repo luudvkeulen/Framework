@@ -30,7 +30,7 @@ if (_action) then {
     [_unit,group player] remoteExec ["TON_fnc_clientGangLeader",_unit]; //Boot that bitch!
 
     if (life_HC_isActive) then {
-        [3,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+        [3,group player] remoteExec ["HC_fnc_updateGang", HC_Life]; //Update the database.
     } else {
         [3,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
     };

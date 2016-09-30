@@ -32,7 +32,7 @@ if (_action) then {
     hint parseText format [localize "STR_GNOTF_UpgradeSuccess",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
 
     if (life_HC_isActive) then {
-        [2,group player] remoteExec ["HC_fnc_updateGang",HC_Life];
+        [2,group player] remoteExec ["HC_fnc_updateGang", HC_Life];
     } else {
         [2,group player] remoteExec ["TON_fnc_updateGang",RSERV];
     };

@@ -24,7 +24,7 @@ CASH = CASH + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
 if (life_HC_isActive) then {
-    [1,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+    [1,group player] remoteExec ["HC_fnc_updateGang", HC_Life]; //Update the database.
 } else {
     [1,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 };

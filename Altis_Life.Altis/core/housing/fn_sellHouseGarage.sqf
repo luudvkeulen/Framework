@@ -26,7 +26,7 @@ _action = [
 if (_action) then {
 
     if (life_HC_isActive) then {
-        [_uid,_house,1] remoteExec ["HC_fnc_houseGarage",HC_Life];
+        [_uid,_house,1] remoteExec ["HC_fnc_houseGarage", HC_Life];
     } else {
         [_uid,_house,1] remoteExec ["TON_fnc_houseGarage",RSERV];
     };

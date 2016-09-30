@@ -35,7 +35,7 @@ if (count _invs > 0) then {
     if (_illegal > 6000) then {
 
         if (life_HC_isActive) then {
-            [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"482"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+            [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"482"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
         } else {
             [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"482"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
         };
@@ -43,7 +43,7 @@ if (count _invs > 0) then {
     };
 
     if (life_HC_isActive) then {
-        [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"481"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+        [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"481"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
     } else {
         [getPlayerUID _civ,_civ getVariable ["realname",name _civ],"481"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
     };

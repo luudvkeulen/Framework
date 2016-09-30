@@ -23,7 +23,7 @@ _price2 = CASH + _price;
 [0] call SOCK_fnc_updatePartial;
 
 if (life_HC_isActive) then {
-    [player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];
+    [player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell", HC_Life];
 } else {
     [player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
 };

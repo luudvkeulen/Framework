@@ -44,7 +44,7 @@ if ([true,_type,_amount] call life_fnc_handleInv) then {
             group player setVariable ["gang_bank",_funds,true];
 
             if (life_HC_isActive) then {
-                [1,group player] remoteExecCall ["HC_fnc_updateGang",HC_Life];
+                [1,group player] remoteExecCall ["HC_fnc_updateGang", HC_Life];
             } else {
                 [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
             };
