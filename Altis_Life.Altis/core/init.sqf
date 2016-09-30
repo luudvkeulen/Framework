@@ -10,7 +10,7 @@
 private ["_handle", "_timeStamp", "_server_isReady", "_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
-0 cutText[localize "STR_Init_ClientSetup", "BLACK FADED"];
+0 cutText [localize "STR_Init_ClientSetup", "BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
@@ -62,7 +62,7 @@ if (_extDB_notLoaded isEqualType []) exitWith {
 
 [] call SOCK_fnc_dataQuery;
 waitUntil {life_session_completed};
-0 cutText[localize "STR_Init_ClientFinish", "BLACK FADED"];
+0 cutText [localize "STR_Init_ClientFinish", "BLACK FADED"];
 0 cutFadeOut 9999999;
 
 //diag_log "::Life Client:: Group Base Execution";
@@ -113,7 +113,7 @@ diag_log "Display 46 Found";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 player addRating 99999999;
 
-[player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
+[player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 0 cutText ["", "BLACK IN"];
 [] call life_fnc_hudSetup;
 
@@ -145,16 +145,16 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 };
 
 CONSTVAR(life_paycheck); //Make the paycheck static.
-if (LIFE_SETTINGS (getNumber, "enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
+if (LIFE_SETTINGS(getNumber, "enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 
-if (LIFE_SETTINGS (getNumber, "pump_service") isEqualTo 1) then {
+if (LIFE_SETTINGS(getNumber, "pump_service") isEqualTo 1) then {
     [] execVM "core\fn_setupStationService.sqf";
 };
 
 if (life_HC_isActive) then {
-    [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate", HC_Life];
+    [getPlayerUID player, player getVariable ["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate", HC_Life];
 } else {
-    [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate", RSERV];
+    [getPlayerUID player, player getVariable ["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate", RSERV];
 };
 
 life_hideoutBuildings = [];
