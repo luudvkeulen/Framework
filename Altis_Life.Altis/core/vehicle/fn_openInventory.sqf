@@ -17,9 +17,9 @@ if (!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";};
 disableSerialization;
 
 if (_vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F") then {
-    ctrlSetText[3501,format [(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+    ctrlSetText[3501,format [(localize "STR_MISC_HouseStorage")+ " - %1",getText (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
-    ctrlSetText[3501,format [(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+    ctrlSetText[3501,format [(localize "STR_MISC_VehStorage")+ " - %1",getText (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
 _veh_data = [_vehicle] call life_fnc_vehicleWeight;

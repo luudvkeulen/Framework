@@ -53,22 +53,22 @@ if (_section isEqualTo "") then {
 
 if (!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
 _config = configFile >> _section >> _className;
-_displayName = getText(_config >> "displayName");
-_picture = getText(_config >> "picture");
-_desc = getText(_config >> "descriptionshort");
+_displayName = getText (_config >> "displayName");
+_picture = getText (_config >> "picture");
+_desc = getText (_config >> "descriptionshort");
 _base = inheritsFrom _config;
 
 switch (_section) do
 {
     case "CfgVehicles": {
-        _type = getText(_config >> "vehicleClass");
+        _type = getText (_config >> "vehicleClass");
         _scope = getNumber(_config >> "scope");
     };
 
     case "CfgWeapons": {
         _scope = getNumber(_config >> "scope");
         _type = getNumber(_config >> "type");
-        _desc = getText(_config >> "descriptionshort");
+        _desc = getText (_config >> "descriptionshort");
 
         //Compatible attachments
         if (isClass (_config >> "WeaponSlotsInfo")) then

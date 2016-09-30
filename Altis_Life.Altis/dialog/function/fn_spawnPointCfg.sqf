@@ -59,9 +59,9 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
     };
 
         if (_flag) then {
-            _tempConfig pushBack getText(_curConfig >> "spawnMarker");
-      _tempConfig pushBack getText(_curConfig >> "displayName");
-      _tempConfig pushBack getText(_curConfig >> "icon");
+            _tempConfig pushBack getText (_curConfig >> "spawnMarker");
+      _tempConfig pushBack getText (_curConfig >> "displayName");
+      _tempConfig pushBack getText (_curConfig >> "icon");
       _return pushBack _tempConfig;
         };
 };
@@ -71,7 +71,7 @@ if (playerSide isEqualTo civilian) then {
     {
       _pos = call compile format ["%1",(_x select 0)];
       _house = nearestObject [_pos, "House"];
-      _houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
+      _houseName = getText (configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 
       _return pushBack [format ["house_%1",_house getVariable "uid"],_houseName,"\a3\ui_f\data\map\MapControl\lighthouse_ca.paa"];
     } forEach life_houses;

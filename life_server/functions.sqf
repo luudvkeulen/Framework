@@ -73,7 +73,7 @@ compileFinal "
     _giver = _this select 2;
     if (isNil ""_unit"" || isNil ""_giver"") exitWith {};
     if (player isEqualTo _unit && !(_vehicle in life_vehicles)) then {
-        _name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
+        _name = getText (configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
         hint format [""%1 has gave you keys for a %2"",_giver,_name];
         life_vehicles pushBack _vehicle;
         [getPlayerUID player,playerSide,_vehicle,1] remoteExecCall [""TON_fnc_keyManagement"",2];
@@ -329,7 +329,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
               _Vehicle = vehicle _x;
               _pos = visiblePosition _x;
               _Markers = createMarkerLocal[format [""CRW%1%2"", _pos select 0, _pos select 1], [(_pos select 0) + 20, _pos select 1, 0]];
-              _TypeVehicle = (getText(configFile >> 'CfgVehicles' >> (typeOf vehicle _x) >> 'displayName'));
+              _TypeVehicle = (getText (configFile >> 'CfgVehicles' >> (typeOf vehicle _x) >> 'displayName'));
               _Markers setMarkerTextLocal format ['%1---%2---%3m', name _x, _TypeVehicle, round(_x distance player)];
               _Markers setMarkerTypeLocal ""mil_dot"";
               if (side _x isEqualTo independent) then {

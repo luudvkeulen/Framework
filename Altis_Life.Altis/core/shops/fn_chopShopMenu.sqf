@@ -25,8 +25,8 @@ _control = CONTROL(39400,39402);
     if (alive _x) then {
         _className = typeOf _x;
         _classNameLife = _className;
-        _displayName = getText(configFile >> "CfgVehicles" >> _className >> "displayName");
-        _picture = getText(configFile >> "CfgVehicles" >> _className >> "picture");
+        _displayName = getText (configFile >> "CfgVehicles" >> _className >> "displayName");
+        _picture = getText (configFile >> "CfgVehicles" >> _className >> "picture");
 
         if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
             _classNameLife = "Default"; //Use Default class if it doesn't exist

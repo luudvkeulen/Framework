@@ -236,8 +236,8 @@ _allowedChildren = [
     TODO: Run check every x minutes and validate all displays.
 */
 {
-    _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
-    _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
+    _onLoad = getText (configFile >> (_x select 0) >> "onLoad");
+    _onUnload = getText (configFile >> (_x select 0) >> "onUnload");
     if (_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
         [profileName,getPlayerUID player,format ["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
         [profileName,format ["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
@@ -275,7 +275,7 @@ forEach [
 ];
 
 /* Forgot to include this but this is also also a popular method for "unreleased" stuff */
-if (getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
+if (getText (configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
     [profileName,getPlayerUID player,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
     [profileName,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
     sleep 0.5;

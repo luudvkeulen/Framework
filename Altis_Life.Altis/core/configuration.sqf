@@ -96,8 +96,8 @@ life_vehicles = [];
 
 /* Setup the BLAH! */
 {
-    _varName = getText(_x >> "variable");
-    _sideFlag = getText(_x >> "side");
+    _varName = getText (_x >> "variable");
+    _sideFlag = getText (_x >> "side");
 
     missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag),false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));

@@ -30,7 +30,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _maxGather = getNumber(_curConfig >> "amount");
     _zoneSize = getNumber(_curConfig >> "zoneSize");
     _resourceZones = getArray(_curConfig >> "zones");
-    _requiredItem = getText(_curConfig >> "item");
+    _requiredItem = getText (_curConfig >> "item");
     _mined = "";
 
     if (_resources isEqualTo []) exitWith {}; //Smart guy :O

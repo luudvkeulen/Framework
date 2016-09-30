@@ -28,9 +28,9 @@ if (count _data isEqualTo 0) then {_veh setVariable ["Trunk",[[],0],true]; _data
     _val = ITEM_VALUE(configName _x);
 
     if (_val > 0) then {
-        _pInv lbAdd format ["[%1] - %2",_val,localize (getText(_x >> "displayName"))];
+        _pInv lbAdd format ["[%1] - %2",_val,localize (getText (_x >> "displayName"))];
         _pInv lbSetData [(lbSize _pInv)-1,configName _x];
-        _icon = (getText(_x >> "icon"));
+        _icon = (getText (_x >> "icon"));
         if (!(_icon isEqualTo "")) then {
             _pInv lbSetPicture [(lbSize _pInv)-1,_icon];
         };
