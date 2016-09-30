@@ -60,7 +60,7 @@ switch (_code) do {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
         if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
             jumpActionTime = time; //Update the time.
-            [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
+            [player] remoteExec ["life_fnc_jumpFnc", RANY]; //Global execution
             _handled = true;
         };
     };
@@ -303,7 +303,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',1];
                         };
                         systemChat localize "STR_MISC_VehUnlock";
-                        [_veh,"unlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"unlockCarSound"] remoteExec ["life_fnc_say3D", RANY];
                     } else {
                         if (local _veh) then {
                             _veh lock 2;
@@ -353,7 +353,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',0];
                         };
                         systemChat localize "STR_MISC_VehLock";
-                        [_veh,"lockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"lockCarSound"] remoteExec ["life_fnc_say3D", RANY];
                     };
                 };
             };

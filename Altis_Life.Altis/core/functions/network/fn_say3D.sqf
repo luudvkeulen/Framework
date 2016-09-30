@@ -4,7 +4,7 @@
 
     Description: Pass your sounds that you want everyone nearby to hear through here.
 
-    Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D",RANY];
+    Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D", RANY];
 */
 private ["_object","_sound"];
 _object = [_this,0,objNull,[objNull]] call BIS_fnc_param;
