@@ -13,7 +13,7 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Title 37401
-private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
+private ["_display", "_curTarget", "_Btn1", "_Btn2", "_Btn3", "_Btn4", "_Btn5", "_Btn6", "_id"];
 if (!dialog) then {
     createDialog "vInteraction_Menu";
 };
@@ -101,13 +101,13 @@ if (playerSide isEqualTo west) then {
         };
     } else {
         _Btn3 ctrlShow false;
-        if (typeOf (_curTarget) in ["C_Van_01_fuel_F","I_Truck_02_fuel_F","B_Truck_01_fuel_F"] && _curTarget in life_vehicles) then {
+        if (typeOf (_curTarget) in ["C_Van_01_fuel_F", "I_Truck_02_fuel_F", "B_Truck_01_fuel_F"] && _curTarget in life_vehicles) then {
             if (!isNil {_curTarget getVariable "fuelTankWork"}) then {
                 _Btn3 ctrlSetText localize "STR_FuelTank_Stop";
                 _Btn3 buttonSetAction "life_vInact_curTarget setVariable [""fuelTankWork"",nil,true]; closeDialog 0;";
                 _Btn3 ctrlShow true;
             } else {
-                if (count (nearestObjects [_curTarget, ["Land_FuelStation_Feed_F","Land_fs_feed_F"], 15]) > 0) then {
+                if (count (nearestObjects [_curTarget, ["Land_FuelStation_Feed_F", "Land_fs_feed_F"], 15]) > 0) then {
                     _Btn3 ctrlSetText localize "STR_FuelTank_Supply";
                     _Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelSupply";
                     _Btn3 ctrlShow true;
@@ -118,7 +118,7 @@ if (playerSide isEqualTo west) then {
                             _Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelStore";
                             _Btn3 ctrlShow true;
                         };
-                    } forEach ["fuel_storage_1","fuel_storage_2"];
+                    } forEach ["fuel_storage_1", "fuel_storage_2"];
                 };
             };
         };
