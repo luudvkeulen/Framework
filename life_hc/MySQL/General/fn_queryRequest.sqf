@@ -121,7 +121,7 @@ switch (_side) do {
         waitUntil {scriptDone _houseData};
         _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
         _gangData = _uid spawn HC_fnc_queryPlayerGang;
-        waitUntil{scriptDone _gangData};
+        waitUntil {scriptDone _gangData};
         _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
     };
 

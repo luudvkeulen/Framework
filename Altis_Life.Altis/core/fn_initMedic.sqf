@@ -25,5 +25,5 @@ if (LIFE_SETTINGS(getNumber,"restrict_medic_weapons") isEqualTo 1) then {
 };
 
 [] call life_fnc_spawnMenu;
-waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
-waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
+waitUntil {!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
+waitUntil {isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.

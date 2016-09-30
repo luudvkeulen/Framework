@@ -43,7 +43,7 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
 } else {
     if ([true,(_itemInfo select 0),(_itemInfo select 1)] call life_fnc_handleInv) then {
         deleteVehicle _this;
-        //waitUntil{isNull _this};
+        //waitUntil {isNull _this};
         player playMove "AinvPknlMstpSlayWrflDnon";
 
         titleText[format [localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];

@@ -42,18 +42,18 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
-waitUntil{!isNil "life_HC_isActive"};
+waitUntil {!isNil "life_HC_isActive"};
 if (life_HC_isActive) then {
-    waitUntil{!isNil "life_HC_server_isReady" && !isNil "life_HC_server_extDB_notLoaded"};
+    waitUntil {!isNil "life_HC_server_isReady" && !isNil "life_HC_server_extDB_notLoaded"};
     _server_isReady = life_HC_server_isReady;
     _extDB_notLoaded = life_HC_server_extDB_notLoaded;
 } else {
-    waitUntil{!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
+    waitUntil {!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
     _server_isReady = life_server_isReady;
     _extDB_notLoaded = life_server_extDB_notLoaded;
 };
 
-waitUntil{_server_isReady};
+waitUntil {_server_isReady};
 if (_extDB_notLoaded isEqualType []) exitWith {
     diag_log (_extDB_notLoaded select 1);
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
@@ -138,7 +138,7 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
-        waitUntil{(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
+        waitUntil {(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
         (findDisplay 49) closeDisplay 2; // Close ESC dialog
         (findDisplay 602) closeDisplay 2; // Close Inventory dialog
     };
