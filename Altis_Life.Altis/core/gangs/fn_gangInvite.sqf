@@ -29,7 +29,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [4,_group] remoteExecCall ["HC_fnc_updateGang", HC_Life];
     } else {
-        [4,_group] remoteExecCall ["TON_fnc_updateGang",RSERV];
+        [4,_group] remoteExecCall ["TON_fnc_updateGang", RSERV];
     };
 } else {
     _grpMembers = group player getVariable "gang_members";
@@ -39,6 +39,6 @@ if (_action) then {
     if (life_HC_isActive) then {
         [4,_grpMembers] remoteExecCall ["HC_fnc_updateGang", HC_Life];
     } else {
-        [4,_grpMembers] remoteExecCall ["TON_fnc_updateGang",RSERV];
+        [4,_grpMembers] remoteExecCall ["TON_fnc_updateGang", RSERV];
     };
 };

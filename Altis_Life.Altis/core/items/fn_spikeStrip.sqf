@@ -29,5 +29,5 @@ life_action_spikeStripPickup = player addAction [localize "STR_ISTR_Spike_Pack",
 if (life_HC_isActive) then {
     [_spikeStrip] remoteExec ["HC_fnc_spikeStrip", HC_Life]; //Send it to the HeadlessClient for monitoring.
 } else {
-    [_spikeStrip] remoteExec ["TON_fnc_spikeStrip",RSERV]; //Send it to the server for monitoring.
+    [_spikeStrip] remoteExec ["TON_fnc_spikeStrip", RSERV]; //Send it to the server for monitoring.
 };

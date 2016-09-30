@@ -21,7 +21,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [group player] remoteExec ["HC_fnc_removeGang", HC_Life];
     } else {
-        [group player] remoteExec ["TON_fnc_removeGang",RSERV];
+        [group player] remoteExec ["TON_fnc_removeGang", RSERV];
     };
 
 } else {

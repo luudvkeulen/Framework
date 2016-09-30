@@ -19,7 +19,7 @@ if (isNull _unit) exitWith {}; //Not valid
 if (life_HC_isActive) then {
     [getPlayerUID _unit,_unit,player,false] remoteExecCall ["HC_fnc_wantedBounty", HC_Life];
 } else {
-    [getPlayerUID _unit,_unit,player,false] remoteExecCall ["life_fnc_wantedBounty",RSERV];
+    [getPlayerUID _unit,_unit,player,false] remoteExecCall ["life_fnc_wantedBounty", RSERV];
 };
 
 if (isNull _unit) exitWith {}; //Not valid

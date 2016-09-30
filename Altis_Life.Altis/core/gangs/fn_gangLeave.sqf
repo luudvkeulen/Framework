@@ -22,7 +22,7 @@ group player setVariable ["gang_members",_members,true];
 if (life_HC_isActive) then {
     [4,group player] remoteExec ["HC_fnc_updateGang", HC_Life]; //Update the database.
 } else {
-    [4,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [4,group player] remoteExec ["TON_fnc_updateGang", RSERV]; //Update the database.
 };
 
 closeDialog 0;

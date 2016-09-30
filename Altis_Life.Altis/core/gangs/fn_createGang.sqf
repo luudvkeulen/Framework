@@ -22,7 +22,7 @@ if (BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {hint format [local
 if (life_HC_isActive) then {
     [player,getPlayerUID player,_gangName] remoteExec ["HC_fnc_insertGang", HC_Life];
 } else {
-    [player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang",RSERV];
+    [player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang", RSERV];
 };
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

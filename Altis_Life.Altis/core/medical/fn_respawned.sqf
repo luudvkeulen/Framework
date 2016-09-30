@@ -66,7 +66,7 @@ if (!isNil "life_copRecieve") then {
     if (life_HC_isActive) then {
         [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["HC_fnc_wantedBounty", HC_Life];
     } else {
-        [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["life_fnc_wantedBounty",RSERV];
+        [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["life_fnc_wantedBounty", RSERV];
     };
 
     life_copRecieve = nil;
@@ -78,7 +78,7 @@ if (life_removeWanted) then {
     if (life_HC_isActive) then {
         [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove", HC_Life];
     } else {
-        [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+        [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove", RSERV];
     };
 
 };

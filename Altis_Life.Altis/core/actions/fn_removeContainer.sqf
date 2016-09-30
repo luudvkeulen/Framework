@@ -34,7 +34,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [_container] remoteExecCall ["HC_fnc_deleteDBContainer", HC_Life];
     } else {
-        [_container] remoteExecCall ["TON_fnc_deleteDBContainer",RSERV];
+        [_container] remoteExecCall ["TON_fnc_deleteDBContainer", RSERV];
     };
 
     {

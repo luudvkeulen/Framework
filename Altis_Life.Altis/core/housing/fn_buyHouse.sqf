@@ -35,7 +35,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [_uid,_house] remoteExec ["HC_fnc_addHouse", HC_Life];
     } else {
-        [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
+        [_uid,_house] remoteExec ["TON_fnc_addHouse", RSERV];
     };
 
     if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

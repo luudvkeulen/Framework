@@ -25,7 +25,7 @@ _price2 = CASH + _price;
 if (life_HC_isActive) then {
     [player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell", HC_Life];
 } else {
-    [player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
+    [player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell", RSERV];
 };
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

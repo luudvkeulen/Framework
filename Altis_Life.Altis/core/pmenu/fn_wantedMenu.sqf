@@ -48,5 +48,5 @@ if (FETCH_CONST(life_coplevel) < 3 && {FETCH_CONST(life_adminlevel) isEqualTo 0}
 if (life_HC_isActive) then {
     [player] remoteExec ["HC_fnc_wantedFetch", HC_Life];
 } else {
-    [player] remoteExec ["life_fnc_wantedFetch",RSERV];
+    [player] remoteExec ["life_fnc_wantedFetch", RSERV];
 };

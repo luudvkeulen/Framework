@@ -86,7 +86,7 @@ if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _k
         if (life_HC_isActive) then {
             [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187V"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
         } else {
-            [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187V"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+            [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187V"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
         };
 
         //Get rid of this if you don't want automatic vehicle license removal.
@@ -98,7 +98,7 @@ if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _k
         if (life_HC_isActive) then {
             [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
         } else {
-            [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+            [getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
         };
 
         if (!local _killer) then {
@@ -136,7 +136,7 @@ CASH = 0;
 life_is_alive = false;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
-[player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
+[player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;

@@ -62,7 +62,7 @@ switch (true) do {
         if (life_HC_isActive) then {
             [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove", HC_Life];
         } else {
-            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove", RSERV];
         };
 
         [5] call SOCK_fnc_updatePartial;
@@ -76,7 +76,7 @@ switch (true) do {
         if (life_HC_isActive) then {
             [getPlayerUID player,profileName,"901"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
         } else {
-            [getPlayerUID player,profileName,"901"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+            [getPlayerUID player,profileName,"901"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
         };
 
         [5] call SOCK_fnc_updatePartial;
@@ -89,7 +89,7 @@ switch (true) do {
         if (life_HC_isActive) then {
             [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove", HC_Life];
         } else {
-            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove", RSERV];
         };
 
         player setPos (getMarkerPos "jail_release");

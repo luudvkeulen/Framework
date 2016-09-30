@@ -26,7 +26,7 @@ group player setVariable ["gang_bank",_gFund,true];
 if (life_HC_isActive) then {
     [1,group player] remoteExec ["HC_fnc_updateGang", HC_Life]; //Update the database.
 } else {
-    [1,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [1,group player] remoteExec ["TON_fnc_updateGang", RSERV]; //Update the database.
 };
 
 hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];

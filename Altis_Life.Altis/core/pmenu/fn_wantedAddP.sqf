@@ -20,5 +20,5 @@ if (isNull _unit) exitWith {};
 if (life_HC_isActive) then {
     [getPlayerUID _unit,_unit getVariable ["realname",name _unit],_amount] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
 } else {
-    [getPlayerUID _unit,_unit getVariable ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+    [getPlayerUID _unit,_unit getVariable ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd", RSERV];
 };

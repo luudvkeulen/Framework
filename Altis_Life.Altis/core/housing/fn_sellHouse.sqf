@@ -31,7 +31,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [_house] remoteExecCall ["HC_fnc_sellHouse", HC_Life];
     } else {
-        [_house] remoteExecCall ["TON_fnc_sellHouse",RSERV];
+        [_house] remoteExecCall ["TON_fnc_sellHouse", RSERV];
     };
 
     _house setVariable ["locked",false,true];
@@ -71,7 +71,7 @@ if (_action) then {
             if (life_HC_isActive) then {
                 [_x] remoteExecCall ["HC_fnc_sellHouseContainer", HC_Life];
             } else {
-                [_x] remoteExecCall ["TON_fnc_sellHouseContainer",RSERV];
+                [_x] remoteExecCall ["TON_fnc_sellHouseContainer", RSERV];
             };
 
         } forEach _containers;
