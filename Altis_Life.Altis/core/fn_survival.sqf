@@ -18,7 +18,7 @@ _fnc_food =  {
             case 20: {hint localize "STR_NOTF_EatMSG_2";};
             case 10: {
                 hint localize "STR_NOTF_EatMSG_3";
-                if (LIFE_SETTINGS (getNumber, "enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
+                if (LIFE_SETTINGS(getNumber, "enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
             };
         };
     };
@@ -60,12 +60,12 @@ for "_i" from 0 to 1 step 0 do {
 
     /* Adjustment of carrying capacity based on backpack changes */
     if (backpack player isEqualTo "") then {
-        life_maxWeight = LIFE_SETTINGS (getNumber, "total_maxWeight");
+        life_maxWeight = LIFE_SETTINGS(getNumber, "total_maxWeight");
         _bp = backpack player;
     } else {
         if (!(backpack player isEqualTo "") && {!(backpack player isEqualTo _bp)}) then {
             _bp = backpack player;
-            life_maxWeight = LIFE_SETTINGS (getNumber, "total_maxWeight") + round(FETCH_CONFIG2 (getNumber, "CfgVehicles", _bp, "maximumload") / 4);
+            life_maxWeight = LIFE_SETTINGS(getNumber, "total_maxWeight") + round(FETCH_CONFIG2 (getNumber, "CfgVehicles", _bp, "maximumload") / 4);
         };
     };
 
