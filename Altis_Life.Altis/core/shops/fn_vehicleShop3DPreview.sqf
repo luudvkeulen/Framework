@@ -18,7 +18,7 @@
 */
 
 
-private ["_classView","_object","_id"];
+private ["_classView", "_object", "_id"];
 
 if (isNil "life_preview_3D_vehicle_cam") then
 {
@@ -40,13 +40,13 @@ if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && 
             life_pos_exist = true;
             life_preview_light = "#lightpoint" createVehicle life_pos_attach;
             life_preview_light setLightBrightness 0.5;
-            life_preview_light setLightColor [1,1,1];
-            life_preview_light setLightAmbient [1,1,1];
+            life_preview_light setLightColor [1, 1, 1];
+            life_preview_light setLightAmbient [1, 1, 1];
         };
         _object = _classView createVehicle life_pos_attach;
-        _id = player getVariable ["life_clientID",-1];
-        [_object] remoteExecCall ["life_fnc_hideObj",-_id];
-        [life_preview_light] remoteExecCall ["life_fnc_hideObj",-_id];
+        _id = player getVariable ["life_clientID", -1];
+        [_object] remoteExecCall ["life_fnc_hideObj", -_id];
+        [life_preview_light] remoteExecCall ["life_fnc_hideObj", -_id];
         [_object] call life_fnc_clearVehicleAmmo;
         _object attachTo [life_attachment_point, life_pos_attach];
 

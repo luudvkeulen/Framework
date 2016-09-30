@@ -7,7 +7,7 @@
     Master handling of the weapon shop for buying / selling an item.
 */
 disableSerialization;
-private ["_price","_item","_itemInfo","_bad"];
+private ["_price", "_item", "_itemInfo", "_bad"];
 if ((lbCurSel 38403) isEqualTo -1) exitWith {hint localize "STR_Shop_Weapon_NoSelect"};
 _price = lbValue[38403,(lbCurSel 38403)]; if (isNil "_price") then {_price = 0;};
 _item = lbData[38403,(lbCurSel 38403)];
@@ -16,8 +16,8 @@ _itemInfo = [_item] call life_fnc_fetchCfgDetails;
 _bad = "";
 
 if ((_itemInfo select 6) != "CfgVehicles") then {
-    if ((_itemInfo select 4) in [4096,131072]) then {
-        if (!(player canAdd _item) && (uiNamespace getVariable ["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = (localize "STR_NOTF_NoRoom")};
+    if ((_itemInfo select 4) in [4096, 131072]) then {
+        if (!(player canAdd _item) && (uiNamespace getVariable ["Weapon_Shop_Filter", 0]) != 1) exitWith {_bad = (localize "STR_NOTF_NoRoom")};
     };
 };
 
@@ -29,8 +29,8 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     hint parseText format [localize "STR_Shop_Weapon_Sold",_itemInfo select 1,[_price] call life_fnc_numberText];
     [nil,(uiNamespace getVariable ["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
 } else {
-    _altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
-    _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
+    _altisArray = ["Land_u_Barracks_V2_F", "Land_i_Barracks_V2_F"];
+    _tanoaArray = ["Land_School_01_F", "Land_Warehouse_03_F", "Land_House_Small_02_F"];
     private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
     private _hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
     if (!isNil "_hideout" && {!isNil {group player getVariable "gang_bank"}} && {(group player getVariable "gang_bank") >= _price}) then {

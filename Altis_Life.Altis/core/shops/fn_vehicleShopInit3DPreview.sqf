@@ -30,7 +30,7 @@ life_preview_3D_vehicle_object = objNull;
     // Until we left the visualization.
     for "_i" from 0 to 1 step 0 do {
         if (isNull life_preview_3D_vehicle_cam) exitWith {};
-        private ["_object","_distanceCam","_azimuthCam"];
+        private ["_object", "_distanceCam", "_azimuthCam"];
 
         // Waiting for a view object.
         waitUntil {!isNull life_preview_3D_vehicle_object};

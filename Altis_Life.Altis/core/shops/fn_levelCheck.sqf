@@ -17,7 +17,7 @@ if (_itemConfig isEqualTo []) exitWith {diag_log "An empty array was passed to f
 
 if (count _itemConfig isEqualTo 5) then {
             
-    _levelArray = _itemConfig param [4,[],[]];
+    _levelArray = _itemConfig param [4, [], []];
     _levelName = _levelArray select 0;
     _levelType = _levelArray select 1;
     _levelValue = _levelArray select 2;

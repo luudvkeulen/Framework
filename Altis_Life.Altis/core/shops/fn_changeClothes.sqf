@@ -7,7 +7,7 @@
     Used in the clothing store to show a 'preview' of the piece of clothing.
 */
 disableSerialization;
-private ["_control","_selection","_data","_price","_total","_totalPrice"];
+private ["_control", "_selection", "_data", "_price", "_total", "_totalPrice"];
 _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 _price = (findDisplay 3100) displayCtrl 3102;
@@ -17,7 +17,7 @@ if (isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
 if (life_cMenu_lock) exitWith {};
 life_cMenu_lock = true;
 
-life_clothing_purchase set [life_clothing_filter,(_control lbValue _selection)];
+life_clothing_purchase set [life_clothing_filter, (_control lbValue _selection)];
 _data = _control lbData _selection;
 
 if (_data isEqualTo "NONE") then {
@@ -29,13 +29,13 @@ if (_data isEqualTo "NONE") then {
         case 4: {backpack player};
     };
 
-    [_item,false] call life_fnc_handleItem;
+    [_item, false] call life_fnc_handleItem;
 } else {
-    [_data,true,nil,nil,nil,nil,nil,true] call life_fnc_handleItem;
+    [_data, true, nil, nil, nil, nil, nil, true] call life_fnc_handleItem;
 };
 
 life_cMenu_lock = false;
-_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
+_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>", [(_control lbValue _selection)] call life_fnc_numberText];
 
 _totalPrice = 0;
 {
@@ -44,6 +44,6 @@ _totalPrice = 0;
     };
 } forEach life_clothing_purchase;
 
-_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>$%1</t>",[_totalPrice] call life_fnc_numberText];
+_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>$%1</t>", [_totalPrice] call life_fnc_numberText];
 
 [] call life_fnc_playerSkins;

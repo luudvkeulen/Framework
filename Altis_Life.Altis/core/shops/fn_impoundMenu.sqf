@@ -6,7 +6,7 @@
     Lists impounded vehicles.
     DUE TO BE REWROTE IN NEW SYSTEM
 */
-private ["_display","_cars","_name","_pic","_color","_text","_price"];
+private ["_display", "_cars", "_name", "_pic", "_color", "_text", "_price"];
 
 if (!dialog) then
 {
@@ -46,9 +46,9 @@ for "_i" from 0 to (count life_vehicles)-1 do
 
         _name = getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
         _pic = getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
-        _cars lbAdd format ["%1 %2 - Cost: $%3",_name,_text,[_price] call life_fnc_numberText];
-        _cars lbSetPicture [(lbSize _cars)-1,_pic];
-        _cars lbSetData [(lbSize _cars)-1,str(_i)];
-        _cars lbSetValue [(lbSize _cars)-1,_price];
+        _cars lbAdd format ["%1 %2 - Cost: $%3", _name, _text, [_price] call life_fnc_numberText];
+        _cars lbSetPicture [(lbSize _cars)-1, _pic];
+        _cars lbSetData [(lbSize _cars)-1, str (_i)];
+        _cars lbSetValue [(lbSize _cars)-1, _price];
     };
 };

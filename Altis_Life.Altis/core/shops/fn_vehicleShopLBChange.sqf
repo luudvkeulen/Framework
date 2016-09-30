@@ -9,31 +9,31 @@
     displays various bits of information about the vehicle.
 */
 disableSerialization;
-private ["_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
+private ["_className", "_classNameLife", "_initalPrice", "_buyMultiplier", "_rentMultiplier", "_vehicleInfo", "_colorArray", "_ctrl", "_trunkSpace", "_maxspeed", "_horsepower", "_passengerseats", "_fuel", "_armor"];
 
 //Fetch some information.
 _className = (_this select 0) lbData (_this select 1);
 _classNameLife = _className;
 _vIndex = (_this select 0) lbValue (_this select 1);
 
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
+_initalPrice = M_CONFIG(getNumber, "LifeCfgVehicles", _classNameLife, "price");
 
 switch (playerSide) do {
     case civilian: {
-        _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
-        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_CIVILIAN");
+        _buyMultiplier = LIFE_SETTINGS(getNumber, "vehicle_purchase_multiplier_CIVILIAN");
+        _rentMultiplier = LIFE_SETTINGS(getNumber, "vehicle_rental_multiplier_CIVILIAN");
     };
     case west: {
-        _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");
-        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_COP");
+        _buyMultiplier = LIFE_SETTINGS(getNumber, "vehicle_purchase_multiplier_COP");
+        _rentMultiplier = LIFE_SETTINGS(getNumber, "vehicle_rental_multiplier_COP");
     };
     case independent: {
-        _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
-        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_MEDIC");
+        _buyMultiplier = LIFE_SETTINGS(getNumber, "vehicle_purchase_multiplier_MEDIC");
+        _rentMultiplier = LIFE_SETTINGS(getNumber, "vehicle_rental_multiplier_MEDIC");
     };
     case east: {
-        _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
-        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_OPFOR");
+        _buyMultiplier = LIFE_SETTINGS(getNumber, "vehicle_purchase_multiplier_OPFOR");
+        _rentMultiplier = LIFE_SETTINGS(getNumber, "vehicle_rental_multiplier_OPFOR");
     };
 };
 
@@ -56,8 +56,8 @@ ctrlShow [2330,true];
     (localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
     (localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
     (localize "STR_Shop_Veh_UI_Armor")+ " %8",
-    [round(_initalPrice * _rentMultiplier)] call life_fnc_numberText,
-    [round(_initalPrice * _buyMultiplier)] call life_fnc_numberText,
+    [round (_initalPrice * _rentMultiplier)] call life_fnc_numberText,
+    [round (_initalPrice * _buyMultiplier)] call life_fnc_numberText,
     _maxspeed,
     _horsepower,
     _passengerseats,
@@ -66,14 +66,14 @@ ctrlShow [2330,true];
     _armor
 ];
 
-_ctrl = CONTROL(2300,2304);
+_ctrl = CONTROL(2300, 2304);
 lbClear _ctrl;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
-_colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
+_colorArray = M_CONFIG(getArray, "LifeCfgVehicles", _classNameLife, "textures");
 
 {
     _flag = (_x select 1);
@@ -91,18 +91,18 @@ for "_i" from 0 to (count(_colorArray) - 1) do {
 _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
-if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
-    ctrlEnable [2309,false];
+if (_className in (LIFE_SETTINGS(getArray, "vehicleShop_rentalOnly"))) then {
+    ctrlEnable [2309, false];
 } else {
     if (!(life_veh_shop select 3)) then {
-        ctrlEnable [2309,true];
+        ctrlEnable [2309, true];
     };
 };
 
 if ((lbSize _ctrl)-1 != -1) then {
-    ctrlShow[2304,true];
+    ctrlShow [2304, true];
 } else {
-    ctrlShow[2304,false];
+    ctrlShow [2304, false];
 };
 
 true;

@@ -7,33 +7,33 @@
     Functionality for filtering clothing types in the menu.
 */
 disableSerialization;
-private ["_control","_selection","_list","_filter","_pic","_details"];
+private ["_control", "_selection", "_list", "_filter", "_pic", "_details"];
 _control = _this select 0;
 _selection = _this select 1;
 life_clothing_filter = _selection;
 
 switch (_selection) do {
     case 4: {
-        life_shop_cam camSetTarget (player modelToWorld [0,-.15,1.3]);
-        life_shop_cam camSetPos (player modelToWorld [1,-4,2]);
+        life_shop_cam camSetTarget (player modelToWorld [0, -.15, 1.3]);
+        life_shop_cam camSetPos (player modelToWorld [1, -4, 2]);
         life_shop_cam camCommit 1;
     };
 
     case 0: {
-        life_shop_cam camSetTarget (player modelToWorld [0,0,1]);
-        life_shop_cam camSetPos (player modelToWorld [1,4,2]);
+        life_shop_cam camSetTarget (player modelToWorld [0, 0, 1]);
+        life_shop_cam camSetPos (player modelToWorld [1, 4, 2]);
         life_shop_cam camCommit 1;
     };
 
     case 3: {
-        life_shop_cam camSetTarget (player modelToWorld [0,0,1.4]);
-        life_shop_cam camSetPos (player modelToWorld [-.1,2,1.4]);
+        life_shop_cam camSetTarget (player modelToWorld [0, 0, 1.4]);
+        life_shop_cam camSetPos (player modelToWorld [-.1, 2, 1.4]);
         life_shop_cam camCommit 1;
     };
 
     default {
-        life_shop_cam camSetTarget (player modelToWorld [0,0,1.6]);
-        life_shop_cam camSetPos (player modelToWorld [-.5,1,1.6]);
+        life_shop_cam camSetTarget (player modelToWorld [0, 0, 1.6]);
+        life_shop_cam camSetPos (player modelToWorld [-.5, 1, 1.6]);
         life_shop_cam camCommit 1;
     };
 };
@@ -45,11 +45,11 @@ lbClear _filter;
 lbClear _list;
 
 _array = switch (_selection) do {
-    case 0: {M_CONFIG(getArray,"Clothing",life_clothing_store,"uniforms");};
-    case 1: {M_CONFIG(getArray,"Clothing",life_clothing_store,"headgear");};
-    case 2: {M_CONFIG(getArray,"Clothing",life_clothing_store,"goggles");};
-    case 3: {M_CONFIG(getArray,"Clothing",life_clothing_store,"vests");};
-    case 4: {M_CONFIG(getArray,"Clothing",life_clothing_store,"backpacks");};
+    case 0: {M_CONFIG(getArray, "Clothing", life_clothing_store, "uniforms");};
+    case 1: {M_CONFIG(getArray, "Clothing", life_clothing_store, "headgear");};
+    case 2: {M_CONFIG(getArray, "Clothing", life_clothing_store, "goggles");};
+    case 3: {M_CONFIG(getArray, "Clothing", life_clothing_store, "vests");};
+    case 4: {M_CONFIG(getArray, "Clothing", life_clothing_store, "backpacks");};
 };
 
 {
@@ -85,14 +85,14 @@ _array = switch (_selection) do {
                 _list lbAdd _displayName;
             };
 
-            _list lbSetData [(lbSize _list)-1,_className];
-            _list lbSetValue [(lbSize _list)-1,_price];
-            _list lbSetPicture [(lbSize _list)-1,_pic];
+            _list lbSetData [(lbSize _list)-1, _className];
+            _list lbSetValue [(lbSize _list)-1, _price];
+            _list lbSetPicture [(lbSize _list)-1, _pic];
         };
     } else {
         if (isNil "_details") then {
             _list lbAdd _displayName;
-            _list lbSetData [(lbSize _list)-1,_className];
+            _list lbSetData [(lbSize _list)-1, _className];
         } else {
             if (_displayName isEqualTo "") then {
                 _list lbAdd (_details select 1);
@@ -100,9 +100,9 @@ _array = switch (_selection) do {
                 _list lbAdd _displayName;
             };
 
-            _list lbSetData [(lbSize _list)-1,_className];
-            _list lbSetValue [(lbSize _list)-1,_price];
-            _list lbSetPicture [(lbSize _list)-1,_pic];
+            _list lbSetData [(lbSize _list)-1, _className];
+            _list lbSetValue [(lbSize _list)-1, _price];
+            _list lbSetPicture [(lbSize _list)-1, _pic];
         };
     };
 } forEach _array;
