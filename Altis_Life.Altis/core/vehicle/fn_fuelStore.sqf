@@ -7,10 +7,10 @@
     Fuel Tank Job, Fill Truck with Fuel.
 */
 
-private ["_vehicle","_fuelSpace","_fuelState","_fuelLevel","_ui","_progress","_pgText"];
+private ["_vehicle", "_fuelSpace", "_fuelState", "_fuelLevel", "_ui", "_progress", "_pgText"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
-if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};
+if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse", "PLAIN"];};
 closeDialog 0;
 life_action_inUse = true;
 if (isNil {_vehicle getVariable "fuelTank"}) then{
@@ -27,7 +27,7 @@ _vehicle remoteExec ["life_fnc_soundDevice",-2];
 life_action_inUse = false;
 
 disableSerialization;
-"progressBar" cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress", "PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -37,9 +37,9 @@ _progress progressSetPosition _fuelLevel;
 
 waitUntil {
     if (!alive _vehicle || isNull _vehicle) exitWith {true};
-    if (isEngineOn _vehicle) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
-    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
-    if (player distance _vehicle > 20) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
+    if (isEngineOn _vehicle) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
+    if (player distance _vehicle > 20) exitWith {titleText[localize "STR_FuelTank_Stopped", "PLAIN"]; true};
 
     _fuelState = _fuelState + 100;
     _vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];
@@ -48,10 +48,10 @@ waitUntil {
     _progress progressSetPosition _fuelLevel;
     _pgText ctrlSetText format ["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
 
-    if (_fuelState >= _fuelSpace) exitWith {titleText [localize "STR_FuelTank_Full","PLAIN"]; true};
+    if (_fuelState >= _fuelSpace) exitWith {titleText [localize "STR_FuelTank_Full", "PLAIN"]; true};
     sleep 0.5;
     false
 };
 
-"progressBar" cutText ["","PLAIN"];
+"progressBar" cutText ["", "PLAIN"];
 _vehicle setVariable ["fuelTankWork",nil,true];
