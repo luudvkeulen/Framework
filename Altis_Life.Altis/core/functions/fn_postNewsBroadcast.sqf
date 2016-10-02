@@ -12,7 +12,7 @@ _broadcastHeader = ctrlText (CONTROL(100100,100101));
 _broadcastMessage = ctrlText (CONTROL(100100,100102));
 _length = count (toArray (_broadcastHeader));
 _characterByte = toArray (_broadcastHeader);
-_allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");
+_allowed = toArray ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");
 _allowedLength = LIFE_SETTINGS(getNumber,"news_broadcast_header_length");
 _badCharacter = false;
 
