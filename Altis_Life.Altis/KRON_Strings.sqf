@@ -66,7 +66,7 @@
 KRON_StrToArray = {
     private ["_in","_i","_arr","_out"];
     _in=_this select 0;
-    _arr = toArray(_in);
+    _arr = toArray (_in);
     _out=[];
     for "_i" from 0 to (count _arr)-1 do {
         _out=_out+[toString([_arr select _i])];
@@ -159,7 +159,7 @@ KRON_StrInStr = {
 KRON_Replace = {
     private ["_str","_old","_new","_out","_tmp","_jm","_la","_lo","_ln","_i"];
     _str=_this select 0;
-    _arr=toArray(_str);
+    _arr=toArray (_str);
     _la=count _arr;
     _old=_this select 1;
     _new=_this select 2;
@@ -237,8 +237,8 @@ KRON_Compare = {
         };
         _s
     };
-    _s1 = toArray(_s1);
-    _s2 = toArray(_s2);
+    _s1 = toArray (_s1);
+    _s2 = toArray (_s2);
     _l1 = count _s1;
     _l2 = count _s2;
     _l=if (_l1<_l2) then {_l1} else {_l2};
