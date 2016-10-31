@@ -28,15 +28,14 @@ player setVariable ["Reviving",nil,true];
 switch (playerSide) do
 {
     case west: {
-        _handle = [] spawn life_fnc_copLoadout;
+        [] call life_fnc_copLoadout;
     };
     case civilian: {
-        _handle = [] spawn life_fnc_civLoadout;
+        [] call life_fnc_civLoadout;
     };
     case independent: {
-        _handle = [] spawn life_fnc_medicLoadout;
+        [] call life_fnc_medicLoadout;
     };
-    waitUntil {scriptDone _handle};
 };
 
 //Cleanup of weapon containers near the body & hide it.
